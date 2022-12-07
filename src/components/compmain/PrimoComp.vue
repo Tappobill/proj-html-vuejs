@@ -41,7 +41,7 @@ export default {
     border: #52babb;
 }
 
-.butt-git:hover{
+.butt-git:hover {
     background-color: transparent;
     border: 1px solid #52babb;
 }
@@ -54,7 +54,7 @@ export default {
     border: 1px solid #52babb;
 }
 
-.butt-rm:hover{
+.butt-rm:hover {
     background-color: #52babb;
 }
 </style>

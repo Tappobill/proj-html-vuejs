@@ -61,7 +61,7 @@ export default {
             padding: 5px 0px;
         }
 
-        button:hover{
+        button:hover {
             background-color: transparent;
             border: 1px solid #52babb;
         }

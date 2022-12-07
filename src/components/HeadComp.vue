@@ -1,68 +1,39 @@
 <template>
   <header>
-    <div class="head d-flex justify-content-between align-items-center">
-      <div>
-        <font-awesome-icon icon="fa-solid fa-clock" /> <span>Open Hours: Mon - Sat - 9:00 - 18:00</span>
-      </div>
-      <div class="d-flex">
-        <div class="me-5">
-          <font-awesome-icon icon="fa-solid fa-phone" /> <span>+1 (305) 1234-5678</span>
-        </div>
-        <div class="me-5">
-          <font-awesome-icon icon="fa-solid fa-envelope" /> <span>hello@example.com</span>
-        </div>
+    <div class="w-100">
+      <div class="container-xl d-flex justify-content-between align-items-center w-100">
         <div>
-          <font-awesome-icon icon="fa-brands fa-facebook-f" class="me-4" />
-          <font-awesome-icon icon="fa-brands fa-twitter" class="me-4" />
-          <font-awesome-icon icon="fa-brands fa-linkedin-in" />
+          <font-awesome-icon icon="fa-solid fa-clock" /> <span>Open Hours: Mon - Sat - 9:00 - 18:00</span>
+        </div>
+        <div class="d-flex">
+          <div class="me-5">
+            <font-awesome-icon icon="fa-solid fa-phone" /> <span>+1 (305) 1234-5678</span>
+          </div>
+          <div class="me-5">
+            <font-awesome-icon icon="fa-solid fa-envelope" /> <span>hello@example.com</span>
+          </div>
+          <div>
+            <font-awesome-icon icon="fa-brands fa-facebook-f" class="me-4" />
+            <font-awesome-icon icon="fa-brands fa-twitter" class="me-4" />
+            <font-awesome-icon icon="fa-brands fa-linkedin-in" />
+          </div>
         </div>
       </div>
     </div>
-    <div class="head d-flex justify-content-between align-items-center index">
-      <div>
-        Logo
-      </div>
-      <div class="d-flex align-items-center">
-        <div class="me-4">
-          <ul>Home <span><font-awesome-icon icon="fa-solid fa-chevron-down" /></span>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-          </ul>
-        </div>
-        <div class="me-4">
-          <ul>About <span><font-awesome-icon icon="fa-solid fa-chevron-down" /></span>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-          </ul>
-        </div>
-        <div class="me-4">
-          <ul>Services <span><font-awesome-icon icon="fa-solid fa-chevron-down" /></span>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-          </ul>
-        </div>
-        <div class="me-4">
-          <ul>Team <span><font-awesome-icon icon="fa-solid fa-chevron-down" /></span>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-          </ul>
-        </div>
-        <div class="me-4">
-          <ul>Blog <span><font-awesome-icon icon="fa-solid fa-chevron-down" /></span>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-          </ul>
-        </div>
-        <div class="me-4">
-          <font-awesome-icon icon="fa-regular fa-user" />
-        </div>
+    <div class="index w-100">
+      <div class="container-xl w-100 d-flex justify-content-between align-items-center">
         <div>
-          <button class="p-1">GET IN TOUCH</button>
+          <img src="../../public/img/Logo.svg" class="w-50" alt="Logo">
+        </div>
+        <div class="d-flex align-items-center">
+          <voce-nav v-for="(voceNav, indexNav) in vociNav" :key="indexNav" :title="voceNav.title"
+            :voci="voceNav.voci" />
+          <div class="me-4">
+            <font-awesome-icon icon="fa-regular fa-user" />
+          </div>
+          <div>
+            <button class="p-1">GET IN TOUCH</button>
+          </div>
         </div>
       </div>
     </div>
@@ -70,10 +41,38 @@
 </template>
 
 <script>
+import VoceNav from './comphead/VoceNav.vue'
 
 
 export default {
-  name: 'HeadComp'
+  components: { VoceNav },
+  name: 'HeadComp',
+  data() {
+    return {
+      vociNav: [
+        {
+          title: "Home",
+          voci: ["Uno", "Due", "Tre"]
+        },
+        {
+          title: "About",
+          voci: ["Uno", "Due", "Tre", "Quattro"]
+        },
+        {
+          title: "Services",
+          voci: ["Uno", "Due", "Tre", "Quattro", "Cinque"]
+        },
+        {
+          title: "Team",
+          voci: ["Uno", "Due", "Tre", "Quattro", "Cinque", "Sei"]
+        },
+        {
+          title: "Blog",
+          voci: ["Uno", "Due", "Tre", "Quattro", "Cinque", "Sei", "Sette"]
+        }
+      ]
+    }
+  }
 
 }
 </script>
@@ -92,31 +91,9 @@ header {
   padding: 15px;
   position: relative;
 
-  .head {
-    width: 60%;
-    margin: auto;
-
-    .me-4:hover {
-      color: #52babb;
-      cursor: pointer;
-    }
-
-    ul:hover li {
-      display: block;
-      color: white;
-    }
-
-    li {
-      display: none;
-    }
-  }
-
   .index {
     position: absolute;
-    top: 0;
-    right: 0;
-    left: 40px;
-    bottom: -200px;
+    top: calc(100% + 20px);
 
     button {
       width: 120px;

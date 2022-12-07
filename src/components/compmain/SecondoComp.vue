@@ -71,8 +71,9 @@ h6 {
 
 h1 {
     font-weight: bold;
+
     span {
-        padding: 0 10px;        
+        padding: 0 10px;
         background: rgba(#60a9ad, 0.3);
         color: #098081;
     }

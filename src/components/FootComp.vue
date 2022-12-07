@@ -22,58 +22,19 @@
                         </div>
                         <button class="butt-rm">GET IN TOUCH</button>
                     </div>
-                    <div class="col-3">
-                        <div class="sfondo">
-                            <ul><span>About</span>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> The Company</li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Istitutional</li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Social & Events
-                                </li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Innovation</li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Environment</li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Technology</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="sfondo">
-                            <ul><span>Services</span>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Audit & Assurance
-                                </li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Financial Advisory
-                                </li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Analytics M&A</li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Middle Marketing
-                                </li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Legal Consulting
-                                </li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Regulatory Risk
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="sfondo">
-                            <ul><span>Support</span>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Responsibility
-                                </li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Terms of Use</li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> About Cookies</li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Privacy Policy
-                                </li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Accessibility</li>
-                                <li><font-awesome-icon icon="fa-solid fa-angle-right" class="me-2" /> Information</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <voce-foot v-for="(voceFoot, indexFoot) in vociFoot" :key="indexFoot" :title="voceFoot.title"
+                        :voci="voceFoot.voci" />
                 </div>
-
             </div>
         </div>
         <div class="bg-black">
             <div class="d-flex justify-content-between align-items-center foot-finale container-fluid p-4">
-                <div>Enjoy the low price. We are tracking any intention of piracy</div>
-                <div><font-awesome-icon icon="fa-regular fa-copyright" /> 2020 NEXGEN is Proudly Powered by <span>Codings</span>.</div>
+                <div>
+                    Enjoy the low price. We are tracking any intention of piracy
+                </div>
+                <div><font-awesome-icon icon="fa-regular fa-copyright" /> 2020 NEXGEN is Proudly Powered by
+                    <span>Codings</span>.
+                </div>
             </div>
         </div>
 
@@ -81,8 +42,28 @@
 </template>
 
 <script>
+import VoceFoot from './compfoot/VoceFoot.vue'
 export default {
-
+    components: { VoceFoot },
+    name: 'FootComp',
+    data() {
+        return {
+            vociFoot: [
+                {
+                    title: "About",
+                    voci: ["The Company", "Istitutional", "Social & Events", "Innovation", "Environment", "Technology"]
+                },
+                {
+                    title: "Services",
+                    voci: ["Audit & Assurance", "Financial Advisory", "Analytics M&A", "Middle Marketing", "Legal Consulting", "Regulatory Risk"]
+                },
+                {
+                    title: "Support",
+                    voci: ["Responsibility", "Terms of Use", "About Cookies", "Privacy Policy", "Accessibility", "Information"]
+                },
+            ]
+        }
+    }
 }
 </script>
 
@@ -98,7 +79,8 @@ export default {
     width: 60%;
     margin: auto;
     color: #bcbdbd;
-    span{
+
+    span {
         color: #52babb;
     }
 }
@@ -117,7 +99,7 @@ export default {
         padding: 10px 20px;
     }
 
-    .butt-rm:hover{
+    .butt-rm:hover {
         background-color: #52babb;
     }
 
@@ -134,25 +116,5 @@ export default {
     p {
         color: #bcbdbd;
     }
-
-    ul {
-        list-style-type: none;
-        line-height: 35px;
-
-        span {
-            font-size: 25px;
-            font-weight: bold;
-        }
-
-        li {
-            color: #bcbdbd;
-        }
-    }
-}
-
-.sfondo {
-    background: rgba(#676969, 0.1);
-    padding: 30px;
-    border-radius: 10px;
 }
 </style>

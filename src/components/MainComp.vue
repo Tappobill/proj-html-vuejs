@@ -1,13 +1,13 @@
 <template>
     <main>
         <PrimoComp />
-        <SecondoComp/>
-        <TerzoComp/>
-        <QuartoComp/>
-        <QuintoComp/>
-        <SestoComp/>
-        <SettimoComp/>
-        <OttavoComp/>
+        <SecondoComp />
+        <TerzoComp />
+        <QuartoComp />
+        <QuintoComp />
+        <SestoComp />
+        <SettimoComp />
+        <OttavoComp />
     </main>
 
 </template>

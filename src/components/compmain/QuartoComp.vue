@@ -16,64 +16,14 @@
                 </div>
             </div>
             <div class="row g-5 pb-5">
-                <div class="col-4">
+                <div class="col-4" v-for="(card, indexCard) in arrayCard" :key="indexCard">
                     <div class="p-5">
                         <div class="mb-4 d-flex justify-content-between">
-                            <font-awesome-icon icon="fa-solid fa-network-wired" class="fa-3x" />
+                            <font-awesome-icon :icon="card.icon" class="fa-3x" />
                             <font-awesome-icon icon="fa-solid fa-arrow-right" class="fa-2x" />
                         </div>
-                        <h4 class="mb-3">Audit & Assurance</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="p-5">
-                        <div class="mb-4 d-flex justify-content-between">
-                            <font-awesome-icon icon="fa-solid fa-briefcase" class="fa-3x" />
-                            <font-awesome-icon icon="fa-solid fa-arrow-right" class="fa-2x" />
-                        </div>
-                        <h4 class="mb-3">Financial Advisory</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="p-5">
-                        <div class="mb-4 d-flex justify-content-between">
-                            <font-awesome-icon icon="fa-solid fa-chart-simple" class="fa-3x" />
-                            <font-awesome-icon icon="fa-solid fa-arrow-right" class="fa-2x" />
-                        </div>
-                        <h4 class="mb-3">Analytics and M&A</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="p-5">
-                        <div class="mb-4 d-flex justify-content-between">
-                            <font-awesome-icon icon="fa-solid fa-plane-up" class="fa-3x" />
-                            <font-awesome-icon icon="fa-solid fa-arrow-right" class="fa-2x" />
-                        </div>
-                        <h4 class="mb-3">Middle Marketing</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="p-5">
-                        <div class="mb-4 d-flex justify-content-between">
-                            <font-awesome-icon icon="fa-solid fa-globe" class="fa-3x" />
-                            <font-awesome-icon icon="fa-solid fa-arrow-right" class="fa-2x" />
-                        </div>
-                        <h4 class="mb-3">Legal Consulting</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="p-5">
-                        <div class="mb-4 d-flex justify-content-between">
-                            <font-awesome-icon icon="fa-solid fa-folder-open" class="fa-3x" />
-                            <font-awesome-icon icon="fa-solid fa-arrow-right" class="fa-2x" />
-                        </div>
-                        <h4 class="mb-3">Regulatory Risk</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                        <h4 class="mb-3">{{ card.title }}</h4>
+                        <p>{{ card.description }}</p>
                     </div>
                 </div>
             </div>
@@ -83,7 +33,43 @@
 
 <script>
 export default {
-    name: 'QuartoComp'
+    name: 'QuartoComp',
+    data() {
+        return {
+            arrayCard: [
+                {
+                    icon: "fa-solid fa-network-wired",
+                    title: "Audit & Assurance",
+                    description: "Lorem inpsum dolor sit amet consectetur adipiscing elit."
+                },
+                {
+                    icon: "fa-solid fa-briefcase",
+                    title: "Financial Advisory",
+                    description: "Lorem inpsum dolor sit amet consectetur adipiscing elit."
+                },
+                {
+                    icon: "fa-solid fa-chart-simple",
+                    title: "Analytics and M&A",
+                    description: "Lorem inpsum dolor sit amet consectetur adipiscing elit."
+                },
+                {
+                    icon: "fa-solid fa-plane-up",
+                    title: "Middle Marketing",
+                    description: "Lorem inpsum dolor sit amet consectetur adipiscing elit."
+                },
+                {
+                    icon: "fa-solid fa-globe",
+                    title: "Legal Consulting",
+                    description: "Lorem inpsum dolor sit amet consectetur adipiscing elit."
+                },
+                {
+                    icon: "fa-solid fa-folder-open",
+                    title: "Regulary Risk",
+                    description: "Lorem inpsum dolor sit amet consectetur adipiscing elit."
+                },
+            ]
+        }
+    }
 }
 </script>
 
@@ -122,7 +108,7 @@ export default {
         border: 1px solid #52babb;
     }
 
-    button:hover{
+    button:hover {
         background-color: #52babb;
     }
 }
@@ -132,18 +118,20 @@ export default {
         background-color: #1d2528;
     }
 }
-.fa-3x, .fa-2x{
+
+.fa-3x,
+.fa-2x {
     color: #098081;
 }
 
-.arrow{
+.arrow {
     border: 1px solid #098081;
     border-radius: 50%;
     padding: 5px;
     background-color: #098081;
 }
 
-.p-5:hover .fa-2x{
+.p-5:hover .fa-2x {
     border: 1px solid #098081;
     border-radius: 50%;
     padding: 5px;
@@ -151,8 +139,7 @@ export default {
     color: white;
 }
 
-.p-5:hover .fa-3x{
+.p-5:hover .fa-3x {
     color: white;
 }
-
 </style>

@@ -17,7 +17,7 @@
                         <input class="w-50 pe-4 mb-3 p-1" type="text" placeholder="More Info">
                     </div>
                     <div class="d-flex justify-content-center align-items-center">
-                        <textarea name="testo" cols="100" rows="8" placeholder="Messaggio" class="p-1 mb-3"></textarea>
+                        <textarea name="testo" cols="140" rows="8" placeholder="Messaggio" class="p-1 mb-3"></textarea>
                     </div>
                     <button class="butt-git ">SEND</button>
                 </div>
@@ -90,7 +90,7 @@ export default {
         padding: 5px 0px;
     }
 
-    .butt-git:hover{
+    .butt-git:hover {
         background-color: transparent;
         color: #52babb;
         border: 1px solid #52babb;
@@ -104,7 +104,7 @@ export default {
         border: 1px solid #52babb;
     }
 
-    .butt-rm:hover{
+    .butt-rm:hover {
         background-color: #52babb;
         color: white;
         border: 1px solid #52babb;

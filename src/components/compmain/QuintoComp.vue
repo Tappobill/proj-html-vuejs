@@ -132,7 +132,7 @@ img {
 
     .me-3 {
         color: #048383;
-        border: 1px solid rgba(#60a9ad, 0.1);        
+        border: 1px solid rgba(#60a9ad, 0.1);
         border-radius: 50%;
         padding: 5px;
         width: 10%;
